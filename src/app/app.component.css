@@ -4,6 +4,7 @@
 }
 body{
 	min-width: 436px;
+	margin:0;
 }
 main{
 	background: url(./mars-bg.svg);
