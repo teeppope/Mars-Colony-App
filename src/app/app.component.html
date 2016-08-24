@@ -1,14 +1,10 @@
-<main>
-	<section class="container">
-		<h1>
-		  {{title}}
-		</h1>
+<nav>
+	<ul>
+		<li><a [routerLink]="['/']">Home</a></li>
+		<li><a [routerLink]="['/arrival']">Arrival</a></li>
+		<li><a [routerLink]="['/encounters']">Encounters</a></li>
+		<li><a [routerLink]="['/report']">report</a></li>
+	</ul>
+</nav>
 
-		<button class="entry-btn pulse" >
-		</button>
-		
-		<p>Tap Circle to Enter</p>
-
-
-	</section>
-</main>
+<router-outlet></router-outlet>

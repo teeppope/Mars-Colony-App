@@ -1,3 +1,5 @@
+//This is the report form page component view
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

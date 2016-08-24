@@ -7,7 +7,7 @@ import { ReportComponent } from './report';
 
 const appRoutes: Routes = [
 	{
-		path: ' ',
+		path: '',
 		component: HomeComponent
 	},
 	{

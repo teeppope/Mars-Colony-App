@@ -1,3 +1,5 @@
+//This is the encounter feed component view
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
