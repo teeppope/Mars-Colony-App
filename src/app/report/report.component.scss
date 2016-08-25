@@ -1,27 +1,33 @@
 /*This is the report form  component view css */
 
 .report{
-	margin: 0 auto;
+	margin: 200px auto;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content:center;
 	width: 360px;
 	height: auto;
 	padding: 20px;
-	background: rgba(0,0,0, 0.75);
+	border-radius: 8px;
+	background: rgba(255,255,255, 0.2);
 	h1{
 		font-family: 'Yantramanav', sans-serif;
 		font-size: 30px;
 		color: white;
 		font-weight: 300;
 		text-transform: uppercase;
+		margin-bottom: 20px;
 	}
-	input[type='textarea'],
+	textarea,
+	button,
 	select{
 		width: 100%;
+		margin-bottom: 20px;
+		padding: 10px 20px;
+		outline: none;
 	}
-	input[type='textarea']{
-		height: 150px;
+	select{
+		-webkit-appearance: none;
 	}
 
 }
