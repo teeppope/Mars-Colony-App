@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['arrival.component.css']
 })
 export class ArrivalComponent implements OnInit {
+	title: string = 'Register'; 
 
   constructor() { }
 
