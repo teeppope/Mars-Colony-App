@@ -7,6 +7,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRoutingProviders } from './app/app.routing';
+import { FormsModule } from '@angular/forms';
 
 //import components
 import { HomeComponent } from './app/home';
@@ -23,7 +24,8 @@ if (environment.production) {
 @NgModule({
 	imports: [
 		BrowserModule,
-		routing
+		routing,
+		FormsModule
 	],
 	providers:[
 		HTTP_PROVIDERS,
