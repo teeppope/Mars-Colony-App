@@ -4,25 +4,29 @@
 
 <main class="report">
 	<section>
-	<h1>{{title}}</h1>
-		<fieldset>
-			<form action="">
 
-				<!-- <label>Occupation</label> -->
-				<select>
-					<option>Just test option</option>
-				</select>
-				<!-- <label>Age</label> -->
-				
-				<textarea name="textarea" placeholder="Gimme Words"></textarea>
-				
+		<h1>{{title}}</h1>
+		
+		<form #reportForm="ngForm" (ngSubmit)="onSubmit()" name="reportForm" action="">
 
-				<button type="submit">
+				<div class="custom-select">
+					<select [(ngModel)]="encounter.atype" name="atype" required>
+
+						<option value="(none)">
+							Select Aliens
+						</option>
+						<option *ngFor="let a of aliens" [value]="a.type">{{a.type}}</option>
+
+					</select>
+
+					<textarea [(ngModel)]="encounter.action" name="action" placeholder="Gimme Words" required></textarea>
+				</div>
+
+				<button [disabled]="noAliens || !reportForm.form.valid" type="submit">
 					Report Encounter
 				</button>
 
-			</form>
+		</form>
 
-		</fieldset>
 	</section>
 </main>
