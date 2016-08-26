@@ -19,7 +19,7 @@ export class EncounterService{
 	}
 	addEncounters(encounter): Promise<Encounter>{
 		let headers = new Headers({'Content-Type': 'application/json'});
-	    let body = JSON.stringify( encounter );
+	    let body = JSON.stringify({ encounter });
 
 	     return this.http
                .post(this.encountersUrl, body, { headers: headers })

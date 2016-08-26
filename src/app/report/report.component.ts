@@ -33,7 +33,7 @@ export class ReportComponent {
   	}
 
   	onSubmit(){
-		this.encounterService.addEncounters({'encounter' : this.encounter}).then(encounter => {
+		this.encounterService.addEncounters(this.encounter).then(encounter => {
 			this.router.navigate(['../encounters']);
 		});
 	}

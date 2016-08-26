@@ -1,6 +1,10 @@
 //This is the encounter feed component view
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Encounter } from '../shared/models';
+import { EncounterService } from '../shared/services/encounters-service';
 
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,11 +12,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'encounters.component.html',
   styleUrls: ['encounters.component.css']
 })
-export class EncountersComponent implements OnInit {
+export class EncountersComponent{
+	title: string = 'Recent Encounters';
 
-  constructor() { }
+	public encounters: Encounter[];
 
-  ngOnInit() {
+  constructor(
+  		private router: Router,
+  		private encounterService: EncounterService
+  	) { 
+
+  		
+  		encounterService.getEncounters().then(encounters => this.encounters = encounters);
+
   }
+
+
 
 }

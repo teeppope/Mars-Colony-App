@@ -1,4 +1,23 @@
 <!-- This is the encounter page free component html  -->
-<p>
-  encounters works!
-</p>
+<main class="encounters">
+	<section>
+		<h1>{{title}}</h1>
+	
+		<ul class="encounter-list">
+			<li *ngFor="let encounter of encounters">
+				<div class="atype">
+					<span class="date">{{encounter.date}}</span>
+					{{encounter.atype}}
+				</div>
+				<p class="action">{{encounter.action}}</p>
+			</li>
+		</ul>
+
+		<a [routerLink]="['/report']">
+			<button class="" >
+				Report Encounters
+			</button>
+		</a>
+		
+	</section>
+</main>
