@@ -12,7 +12,7 @@
 				<div class="custom-select">
 					<select [(ngModel)]="encounter.atype" name="atype" required>
 
-						<option value="(none)">
+						<option value="">
 							Select Aliens
 						</option>
 						<option *ngFor="let a of aliens" [value]="a.type">{{a.type}}</option>

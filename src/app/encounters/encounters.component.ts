@@ -4,13 +4,14 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { Encounter } from '../shared/models';
 import { EncounterService } from '../shared/services/encounters-service';
-
+import { SortByDate } from '../shared/pipe/date-pipe';
 
 @Component({
   moduleId: module.id,
   selector: 'app-encounters',
   templateUrl: 'encounters.component.html',
-  styleUrls: ['encounters.component.css']
+  styleUrls: ['encounters.component.css'],
+  pipes: [SortByDate]
 })
 export class EncountersComponent{
 	title: string = 'Recent Encounters';

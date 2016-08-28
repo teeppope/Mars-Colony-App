@@ -4,7 +4,7 @@
 		<h1>{{title}}</h1>
 	
 		<ul class="encounter-list">
-			<li *ngFor="let encounter of encounters">
+			<li *ngFor="let encounter of (encounters | sortByDate)">
 				<div class="atype">
 					<span class="date">{{encounter.date}}</span>
 					{{encounter.atype}}
