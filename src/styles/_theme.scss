@@ -3,9 +3,24 @@
 }
 body{
 	margin:0 auto;
+	min-width: 360px;
 	background-image: url(../mars-bg.svg);
 	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	font-family: 'Yantramanav', sans-serif;
+	color: white;
 }
 nav{
 	background: white;
+}
+select,
+textarea,
+button{
+	border: none;
 }

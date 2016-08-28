@@ -22,7 +22,7 @@
 					<textarea [(ngModel)]="encounter.action" name="action" placeholder="Gimme Words" required></textarea>
 				</div>
 
-				<button [disabled]="noAliens || !reportForm.form.valid" type="submit">
+				<button class="report-btn" [disabled]="noAliens || !reportForm.form.valid" type="submit">
 					Report Encounter
 				</button>
 

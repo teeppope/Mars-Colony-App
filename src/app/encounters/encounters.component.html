@@ -4,17 +4,17 @@
 		<h1>{{title}}</h1>
 	
 		<ul class="encounter-list">
-			<li *ngFor="let encounter of (encounters | sortByDate)">
+			<li *ngFor="let encounter of encounters">
 				<div class="atype">
-					<span class="date">{{encounter.date}}</span>
 					{{encounter.atype}}
+					<span class="date">{{encounter.date}}</span>
 				</div>
 				<p class="action">{{encounter.action}}</p>
 			</li>
 		</ul>
 
 		<a [routerLink]="['/report']">
-			<button class="" >
+			<button class="report" >
 				Report Encounters
 			</button>
 		</a>

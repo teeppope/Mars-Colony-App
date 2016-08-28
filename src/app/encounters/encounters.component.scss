@@ -1,34 +1,66 @@
 /*This is the encounter page component css */
 
 .encounters{
-	margin: 200px auto;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content:center;
-	width: 360px;
+	width: 475px;
 	height: auto;
 	padding: 20px;
 	border-radius: 8px;
 	background: rgba(255,255,255, 0.2);
 
 	h1{
-		font-family: 'Yantramanav', sans-serif;
-		font-size: 24px;
-		color: white;
+		font-size: 2rem;
 		font-weight: 300;
 		text-transform: uppercase;
 		margin-bottom: 20px;
+		text-align: center;
 	}
 	ul{
 		height: 500px;
 		overflow: scroll;
 		margin-bottom: 20px;
+		background-color: rgba(0,0,0,0.3);
+		padding: 10px;
 	}
+	li{
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		border-bottom: 0.5px dotted rgba(255,255,255, 0.3);
+	}
+	
 	button{
 		width: 100%;
 		margin-bottom: 20px;
-		padding: 10px 20px;
+		padding: 20px 20px;
 		outline: none;
+		cursor: pointer;
 	}
 
+}
+.atype{
+	padding: 10px 0;
+	text-transform: uppercase;
+}
+.action,
+.date{
+	font-weight: 300;
+}
+.date{
+	margin-left: 10px;
+	font-size: 0.75rem;
+}
+
+.action{
+	letter-spacing: 1px;
+	line-height: 1.5rem;
+	font-size: 0.9rem;
+}
+.report{
+	background-color: rgba(39,40,61, 0.8);
+	text-transform: uppercase;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: 300;
 }
