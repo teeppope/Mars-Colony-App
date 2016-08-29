@@ -15,8 +15,8 @@ textarea{
 	font-size: 1rem;
 	text-transform: uppercase;
 	&.ng-dirty.ng-invalid{
-		-webkit-animation: pulse 300ms linear alternate infinite;
-		@-webkit-keyframes "pulse" {
+		-webkit-animation: buzz 300ms linear alternate infinite;
+		@-webkit-keyframes "buzz" {
 			0%{
 				box-shadow: 0px 0px 2px 0px rgba(176, 42, 37, 0.5)
 			}
