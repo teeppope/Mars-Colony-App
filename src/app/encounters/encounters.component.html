@@ -2,9 +2,10 @@
 <main class="encounters">
 	<section>
 		<h1>{{title}}</h1>
-	
-		<ul class="encounter-list">
-			<li *ngFor="let encounter of encounters">
+		<div *ngIf="!encounters" class="loader"></div>
+
+		<ul class="encounter-list" *ngIf="encounters">
+			<li *ngFor="let encounter of ( encounters | sortByDate)">
 				<div class="atype">
 					{{encounter.atype}}
 					<span class="date">{{encounter.date}}</span>

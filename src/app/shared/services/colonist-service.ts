@@ -8,8 +8,7 @@ import 'rxjs/add/operator/toPromise';
 export class ColonistService{
 	
 	colonistsUrl = 'https://red-wdp-api.herokuapp.com/api/mars/colonists';
-	
-	
+	private COLONIST_ID_KEY: string = 'colonistId';
 
 	constructor(private http: Http){
 
@@ -27,10 +26,20 @@ export class ColonistService{
 	     return this.http
                .post(this.colonistsUrl, body, { headers: headers })
                .toPromise()
-               .then(response => response.json().colonist)
+               .then(response => {
+               		const colonist = response.json().colonist;
+               		this.saveColonistToStorage(colonist.id);
+               		return colonist;
+               	})
                .catch(this.handleError);
 	} 
+	public getColonistId(): string{
 
+		return window.localStorage.getItem(this.COLONIST_ID_KEY);
+	}
+	private saveColonistToStorage(colonistId: string): void{
+		window.localStorage.setItem(this.COLONIST_ID_KEY, colonistId);
+	}
 
 	private handleError(error: any): Promise<void>{
 		console.error('An error occurred', error);

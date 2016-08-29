@@ -13,13 +13,13 @@
 					<select [(ngModel)]="encounter.atype" name="atype" required>
 
 						<option value="">
-							Select Aliens
+							What Alien did you see?
 						</option>
 						<option *ngFor="let a of aliens" [value]="a.type">{{a.type}}</option>
 
 					</select>
 
-					<textarea [(ngModel)]="encounter.action" name="action" placeholder="Gimme Words" required></textarea>
+					<textarea [(ngModel)]="encounter.action" name="action" placeholder="What happened?" required></textarea>
 				</div>
 
 				<button class="report-btn" [disabled]="noAliens || !reportForm.form.valid" type="submit">

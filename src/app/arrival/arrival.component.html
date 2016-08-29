@@ -10,14 +10,14 @@
 			
 			<fieldset>
 			
-				<input type="text" [(ngModel)]="colonist.name" name="name" placeholder="Input words" required>
+				<input type="text" [(ngModel)]="colonist.name" name="name" placeholder="Name" required>
 				
-				<input type="number" [(ngModel)]="colonist.age" name="age" placeholder="Input Age" required>
+				<input type="number" [(ngModel)]="colonist.age" name="age" placeholder="Age" required>
 
 				<div class="custom-select">
 					<select [(ngModel)]="colonist.job_id" name="job_id" required>
 
-						<option value="(none)">
+						<option value="(none)" disabled>
 							Select an Occupation
 						</option>
 						<option *ngFor="let o of occupations" [value]="o.id">

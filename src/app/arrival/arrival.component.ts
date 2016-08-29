@@ -1,29 +1,45 @@
 //This is the arrival form page component view
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, HostBinding, trigger, state, style, animate, transition } from '@angular/core';
 import { Colonist, IOccupation } from '../shared/models';
 import { ColonistService } from '../shared/services/colonist-service';
 import { OccupationService } from '../shared/services/occupation-service';
 
 
-//PRobably don't need the below.
-// interface ArrivalInterface{
-// 	colonist: Colonist;
-// 	occupations: IOccupation[];
-// 	NO_OCCUPATION_SELECTED: string;
-// 	onSubmit: Function;
-// }
-
 @Component({
-  moduleId: module.id,
-  selector: 'app-arrival',
-  templateUrl: 'arrival.component.html',
-  styleUrls: ['arrival.component.css']
+	moduleId: module.id,
+	selector: 'app-arrival',
+	templateUrl: 'arrival.component.html',
+	styleUrls: ['arrival.component.css'],
+	animations:[ 
+		trigger('scaleIn', [
+			state('in', style({ transform: 'translateY(0)' })),
+			transition('void => in', [
+				style({
+					height: '0px',
+					transform: 'translateY(-100vh)'
+				}),
+				animate('0ms 500ms ease', style(
+					{
+						height: 'auto'
+					})
+				),
+				animate('500ms 500ms ease', style(
+					{
+						transform: 'translateY(0)'
+					})
+				)
+			])
+		])
+	]
 })
 
 
 export class ArrivalComponent {
-	title: string = 'Register'; 
+
+	@HostBinding('@scaleIn') hostAnimation = "in";
+
+	title: string = 'Register for the Colony'; 
 
 	NO_OCCUPATION_SELECTED = '(none)';
 
@@ -34,7 +50,7 @@ export class ArrivalComponent {
 		private router: Router,
 		private colonistService: ColonistService,
 		private occupationService: OccupationService
-	) { 
+		) { 
 
 		this.colonist = new Colonist ('','', this.NO_OCCUPATION_SELECTED);
 

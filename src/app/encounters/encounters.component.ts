@@ -23,7 +23,6 @@ export class EncountersComponent{
   		private encounterService: EncounterService
   	) { 
 
-  		
   		encounterService.getEncounters().then(encounters => this.encounters = encounters);
 
   }

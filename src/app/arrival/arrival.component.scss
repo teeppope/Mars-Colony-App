@@ -1,4 +1,7 @@
 /*This is the arrival form page component css */
+:host {
+  display: block;
+}
 .arrival{
 	display: flex;
 	flex-flow: row wrap;
@@ -9,35 +12,5 @@
 	height: auto;
 	padding: 20px;
 	background: rgba(255,255,255, 0.2);
-	h1{
-		font-size: 2rem;
-		font-weight: 300;
-		text-transform: uppercase;
-		margin-bottom: 20px;
-		text-align: center;
-	}
-	input[type='text'],
-	input[type='number'],
-	button,
-	select{
-		width: 100%;
-		margin-bottom: 20px;
-		padding: 20px 20px;
-		border: none;
-		outline: none;
-		background-color: rgba(0,0,0,0.3);
-		color: white;
-		font-size: 1rem;
-		text-transform: uppercase;
 
-	}
-	select{
-		-webkit-appearance: none;
-	}
-	button{
-		background-color: rgba(39,40,61, 0.8);
-		font-weight: 300;
-		cursor: pointer;
-		font-size: 1.2rem;
-	}
 }

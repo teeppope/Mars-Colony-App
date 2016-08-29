@@ -2,8 +2,8 @@
 
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { Encounter, IAlien /*Colonist*/ } from '../shared/models';
-// import { ColonistService } from '../shared/services/colonist-service';
+import { Encounter, IAlien, Colonist } from '../shared/models';
+import { ColonistService } from '../shared/services/colonist-service';
 import { EncounterService } from '../shared/services/encounters-service';
 import { AlienService } from '../shared/services/alien-service';
 
@@ -15,7 +15,7 @@ import { AlienService } from '../shared/services/alien-service';
 })
 export class ReportComponent {
 
-	title: string = 'Report Encounter!';
+	title: string = 'Report Alien Encounter!';
 
 	NO_ALIEN_SELECTED = '(none)';
 
@@ -25,14 +25,18 @@ export class ReportComponent {
   constructor(
 	  	private router: Router,
 	  	private encounterService: EncounterService,
-	  	private alienService: AlienService
+	  	private alienService: AlienService,
+	  	private colonistService: ColonistService
   	) { 
-  		this.encounter = new Encounter('', '', '', '555');
+  		const colonistId = this.colonistService.getColonistId();
+
+  		this.encounter = new Encounter('', '', '', colonistId);
 
   		alienService.getAliens().then(aliens => this.aliens = aliens);
   	}
 
   	onSubmit(){
+  		this.encounter.formattedDate
 		this.encounterService.addEncounters(this.encounter).then(encounter => {
 			this.router.navigate(['../encounters']);
 		});
