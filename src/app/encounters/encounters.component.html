@@ -6,10 +6,10 @@
 
 		<ul class="encounter-list" *ngIf="encounters">
 			<li *ngFor="let encounter of ( encounters | sortByDate)">
-				<div class="atype">
+				<h2>
 					{{encounter.atype}}
 					<span class="date">{{encounter.date}}</span>
-				</div>
+				</h2>
 				<p class="action">{{encounter.action}}</p>
 			</li>
 		</ul>
@@ -17,6 +17,11 @@
 		<a [routerLink]="['/report']">
 			<button class="report" >
 				Report Encounters
+			</button>
+		</a>
+		<a [routerLink]="['/marsblog']">
+			<button class="mars-blog" >
+				Read the Mars Blog
 			</button>
 		</a>
 		

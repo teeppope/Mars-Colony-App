@@ -1,8 +1,30 @@
-<main>
+<main class="marsblog">
 	<section>
 		<h1>{{title}}</h1>
-		<div *ngIf="!marsblog" class="loader"></div>
-
+		<div *ngIf="!marsblogs" class="loader"></div>
 		
+		<ul class="marsblog-list" *ngIf="marsblogs">
+			<li *ngFor="let m of marsblogs">
+				<div>
+					<a href="{{m.link}}">
+						<h2>{{m.title.rendered}}</h2>
+					</a>
+					<div class="blog-excerpt" [innerHTML]="m.excerpt.rendered"></div>
+			
+				</div>
+			</li>
+		</ul>
+
+		<a [routerLink]="['/report']">
+			<button class="report" >
+				Report Encounters
+			</button>
+		</a>
+		<a [routerLink]="['/encounters']">
+			<button class="encounters" >
+				View Encounters
+			</button>
+		</a>
+
 	</section>
 </main>
