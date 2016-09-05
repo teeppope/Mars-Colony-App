@@ -5,7 +5,8 @@
 		<div *ngIf="!encounters" class="loader"></div>
 
 		<ul class="encounter-list" *ngIf="encounters">
-			<li *ngFor="let encounter of ( encounters | sortByDate)">
+			<!-- <li *ngFor="let encounter of ( encounters | sortByDate)"> -->
+			<li *ngFor="let encounter of encounters">
 				<h2>
 					{{encounter.atype}}
 					<span class="date">{{encounter.date}}</span>

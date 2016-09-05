@@ -30,7 +30,3 @@ export interface IOccupation{
 	name: string;
 	description: string;
 }
-
-// export interface IMarsblog {
-	
-// }

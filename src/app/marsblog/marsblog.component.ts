@@ -19,14 +19,9 @@ export class MarsblogComponent {
 		private router: Router,
 		private marsblogService: MarsblogService
 	) { 
- 
 		marsblogService.getMarsblog().then(marsblogs => {
       this.marsblogs = marsblogs
       console.log(marsblogs);
     });
-
   }
-  ngOnInit() {
-  }
-
 }
