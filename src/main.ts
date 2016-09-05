@@ -14,6 +14,7 @@ import { HomeComponent } from './app/home';
 import { ArrivalComponent } from './app/arrival';
 import { EncountersComponent } from './app/encounters';
 import { ReportComponent } from './app/report';
+import { MarsblogComponent } from './app/marsblog';
 
 
 //won't use prod mode, but can keep
@@ -36,7 +37,8 @@ if (environment.production) {
 		HomeComponent,
 		ArrivalComponent,
 		EncountersComponent,
-		ReportComponent
+		ReportComponent,
+		MarsblogComponent
 	],
 	exports:[ AppComponent ],
 	bootstrap:[AppComponent],

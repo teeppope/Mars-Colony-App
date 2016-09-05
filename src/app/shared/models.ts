@@ -5,8 +5,6 @@ export class Colonist{
 
 	}
 }
-
-
 export class Encounter{
 	constructor( public atype: string,
 				 private date: string,
@@ -31,5 +29,4 @@ export interface IAlien{
 export interface IOccupation{
 	name: string;
 	description: string;
-
 }

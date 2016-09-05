@@ -4,6 +4,7 @@ import { HomeComponent } from './home';
 import { ArrivalComponent } from './arrival';
 import { EncountersComponent } from './encounters';
 import { ReportComponent } from './report';
+import { MarsblogComponent } from './marsblog';
 
 const appRoutes: Routes = [
 	{
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
 		path: 'report',
 		component: ReportComponent
 	},
+	{
+		path: 'marsblog',
+		component: MarsblogComponent
+	}
 ];
 
 export const appRoutingProviders: any[]=[
