@@ -13,14 +13,17 @@ import { MarsblogService } from '../shared/services/marsblog-service';
 export class MarsblogComponent {
 	title: string = 'The Mars Colony Blog';
 
-	// public marsblogs: IMarsblog[];
+	public marsblogs: any[];
 
 	constructor(
 		private router: Router,
 		private marsblogService: MarsblogService
 	) { 
-  	
-		// marsblogService.getMarsblog().then(marsblogs => this.marsblogs = marsblogs);
+ 
+		marsblogService.getMarsblog().then(marsblogs => {
+      this.marsblogs = marsblogs
+      console.log(marsblogs);
+    });
 
   }
   ngOnInit() {

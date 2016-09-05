@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
-import { IMarsblog } from '../models';
+// import { IMarsblog } from '../models';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -11,10 +11,11 @@ export class MarsblogService{
 	constructor(private http: Http){
 
 	}
-	getMarsblog(): Promise<IMarsblog[]>{
+
+	getMarsblog(): Promise<any> {
 		return this.http.get(this.marsblogUrl)
 					.toPromise()
-					.then(response => response.json().posts)
+					.then(response => response.json())
 					.catch(this.handleError);
 	}
 
