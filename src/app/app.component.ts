@@ -6,7 +6,6 @@ import { ColonistService } from './shared/services/colonist-service';
 import { MarsblogService } from './shared/services/marsblog-service';
 import { Colonist } from './shared/models';
 import { Encounter } from './shared/models';
-// import { IMarsblog } from './shared/models';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
@@ -19,16 +18,14 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 
 export class AppComponent {	
-  
+
 	colonist: Colonist;
 	encounter: Encounter;
-  // marsblog: IMarsblog;	
 
   constructor(  alienService: AlienService, 
-  				occupationService: OccupationService, 
-  				encounterService: EncounterService, 
-  				colonistService: ColonistService,
-          marsblogService: MarsblogService){
+    occupationService: OccupationService, 
+    encounterService: EncounterService, 
+    colonistService: ColonistService,
+    marsblogService: MarsblogService){
   }
 }
-

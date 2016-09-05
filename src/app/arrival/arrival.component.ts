@@ -12,23 +12,23 @@ import { OccupationService } from '../shared/services/occupation-service';
 	templateUrl: 'arrival.component.html',
 	styleUrls: ['arrival.component.css'],
 	animations:[ 
-		trigger('scaleIn', [
-			state('in', style({ transform: 'translateY(0)' })),
-			transition('void => in', [
-				style({
-					height: '0px',
-					transform: 'translateY(-100vh)'
-				}),
-				animate('0ms 500ms ease', style(
-					{
-						height: 'auto'
-					})
-				),
-				animate('500ms 500ms ease', style(
-					{
-						transform: 'translateY(0)'
-					})
-				)
+	trigger('scaleIn', [
+		state('in', style({ transform: 'translateY(0)' })),
+		transition('void => in', [
+			style({
+				height: '0px',
+				transform: 'translateY(-100vh)'
+			}),
+			animate('0ms 500ms ease', style(
+			{
+				height: 'auto'
+			})
+			),
+			animate('500ms 500ms ease', style(
+			{
+				transform: 'translateY(0)'
+			})
+			)
 			])
 		])
 	]
@@ -53,27 +53,16 @@ export class ArrivalComponent {
 		) { 
 
 		this.colonist = new Colonist ('','', this.NO_OCCUPATION_SELECTED);
-
 		//call the API using the service to GET occupations
 		occupationService.getOccupations().then(jobs => this.occupations = jobs);
-
 	}
 
 	onSubmit(){
 		this.colonistService.sendColonist(this.colonist).then(colonist => {
 			this.router.navigate(['../encounters']);
+
 		});
-		// .catch(error => {
-		// 	//TODO Handle Error
-		// });
 	}
-
-	// updateColonist(){
-	// 	console.log('updating colonist');
-	// 	this.colonist = new Colonist ('', '', this.NO_OCCUPATION_SELECTED);
-
-	// }
-
 	get noOccupation(){
 		return this.colonist.job_id === this.NO_OCCUPATION_SELECTED;
 	}

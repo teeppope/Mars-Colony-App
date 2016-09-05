@@ -13,19 +13,19 @@ export class EncounterService{
 	}
 	getEncounters(): Promise<Encounter[]>{
 		return this.http.get(this.encountersUrl)
-					.toPromise()
-					.then(response => response.json().encounters.reverse())
-					.catch(this.handleError);
+		.toPromise()
+		.then(response => response.json().encounters.reverse())
+		.catch(this.handleError);
 	}
 	addEncounters(encounter): Promise<Encounter>{
 		let headers = new Headers({'Content-Type': 'application/json'});
-	    let body = JSON.stringify({ encounter });
+		let body = JSON.stringify({ encounter });
 
-	     return this.http
-               .post(this.encountersUrl, body, { headers: headers })
-               .toPromise()
-               .then(response => response.json().encounter)
-               .catch(this.handleError);
+		return this.http
+		.post(this.encountersUrl, body, { headers: headers })
+		.toPromise()
+		.then(response => response.json().encounter)
+		.catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<void>{

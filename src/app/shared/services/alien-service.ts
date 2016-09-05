@@ -11,9 +11,9 @@ export class AlienService{
 	}
 	getAliens(): Promise<IAlien[]>{
 		return this.http.get(this.aliensUrl)
-					.toPromise()
-					.then(response => response.json().aliens)
-					.catch(this.handleError);
+		.toPromise()
+		.then(response => response.json().aliens)
+		.catch(this.handleError);
 	}
 	private handleError(error: any): Promise<void>{
 		console.error('An error occurred', error);

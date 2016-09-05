@@ -14,9 +14,9 @@ export class MarsblogService{
 
 	getMarsblog(): Promise<any> {
 		return this.http.get(this.marsblogUrl)
-					.toPromise()
-					.then(response => response.json())
-					.catch(this.handleError);
+		.toPromise()
+		.then(response => response.json())
+		.catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<void>{

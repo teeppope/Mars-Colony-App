@@ -1,6 +1,6 @@
 /*This is the First page css component view*/
 :host {
-  display: block;
+	display: block;
 }
 
 .container{
@@ -36,10 +36,7 @@
 }
 @-webkit-keyframes "pulse" {
 	0%{
-		box-shadow: 0px 0px 10px 0px rgba(255,255,255, 0.05),
-				/*	-20px -20px 10px 20px rgba(255, 255,255, 0.02), 
-					20px -20px 10px 60px rgba(255,255,255, 0.03),
-					5px 15px 10px 100px rgba(255, 255, 255, 0.06) */;
+		box-shadow: 0px 0px 10px 0px rgba(255,255,255, 0.05);
 				}
 				50%{
 					box-shadow: -10px 30px 10px 60px rgba(255,255,255, 0.05),

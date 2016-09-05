@@ -8,10 +8,10 @@ import { EncounterService } from '../shared/services/encounters-service';
 import { AlienService } from '../shared/services/alien-service';
 
 @Component({
-  moduleId: module.id,
-  selector: 'app-report',
-  templateUrl: 'report.component.html',
-  styleUrls: ['report.component.css']
+	moduleId: module.id,
+	selector: 'app-report',
+	templateUrl: 'report.component.html',
+	styleUrls: ['report.component.css']
 })
 export class ReportComponent {
 
@@ -22,27 +22,27 @@ export class ReportComponent {
 	public encounter: Encounter;
 	public aliens: IAlien[];
 
-  constructor(
-	  	private router: Router,
-	  	private encounterService: EncounterService,
-	  	private alienService: AlienService,
-	  	private colonistService: ColonistService
-  	) { 
-  		const colonistId = this.colonistService.getColonistId();
+	constructor(
+		private router: Router,
+		private encounterService: EncounterService,
+		private alienService: AlienService,
+		private colonistService: ColonistService
+		) { 
+		const colonistId = this.colonistService.getColonistId();
 
-  		this.encounter = new Encounter('', '', '', colonistId);
+		this.encounter = new Encounter('', '', '', colonistId);
 
-  		alienService.getAliens().then(aliens => this.aliens = aliens);
-  	}
+		alienService.getAliens().then(aliens => this.aliens = aliens);
+	}
 
-  	onSubmit(){
-  		this.encounter.formattedDate
+	onSubmit(){
+		this.encounter.formattedDate
 		this.encounterService.addEncounters(this.encounter).then(encounter => {
 			this.router.navigate(['../encounters']);
 		});
 	}
 
-  	get noAliens(){
+	get noAliens(){
 		return this.encounter.atype === this.NO_ALIEN_SELECTED;
 	}
 }

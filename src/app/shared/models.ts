@@ -1,15 +1,15 @@
 export class Colonist{
 	constructor( public name: string,
-				 public age: string,
-				 public job_id: string) {
+		public age: string,
+		public job_id: string) {
 
 	}
 }
 export class Encounter{
 	constructor( public atype: string,
-				 private date: string,
-				 public action: string,
-				 public colonist_id: string){
+		private date: string,
+		public action: string,
+		public colonist_id: string){
 		
 		this.date = this.formattedDate;
 	}

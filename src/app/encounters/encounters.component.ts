@@ -21,10 +21,10 @@ export class EncountersComponent{
 	public encounters: Encounter[];
 
   constructor(
-  		private router: Router,
-  		private encounterService: EncounterService
-  	) { 
-  		encounterService.getEncounters().then(encounters => this.encounters = encounters);
+    private router: Router,
+    private encounterService: EncounterService
+    ) { 
+    encounterService.getEncounters().then(encounters => this.encounters = encounters);
   }
 
 

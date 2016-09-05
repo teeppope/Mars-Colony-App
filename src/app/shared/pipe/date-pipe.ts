@@ -3,7 +3,7 @@ import { Encounter } from '../models';
 
 @Pipe(
 	{name: 'sortByDate'}
-)
+	)
 export class SortByDate implements PipeTransform {
 
 
@@ -12,7 +12,7 @@ export class SortByDate implements PipeTransform {
 		if(encountersList){
 			return encountersList
 			.map(encounter => {
-			
+				
 				encounter.date = new Date(encounter.date).getTime();
 				
 				return encounter;

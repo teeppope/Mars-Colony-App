@@ -15,23 +15,23 @@ export class ColonistService{
 	}
 	getColonists(): Promise<Colonist[]>{
 		return this.http.get(this.colonistsUrl)
-					.toPromise()
-					.then(response => response.json().colonists)
-					.catch(this.handleError);
+		.toPromise()
+		.then(response => response.json().colonists)
+		.catch(this.handleError);
 	}
 	sendColonist(colonist: Colonist): Promise<Colonist>{
 		let headers = new Headers({'Content-Type': 'application/json'});
-	    let body = JSON.stringify({ colonist });
+		let body = JSON.stringify({ colonist });
 
-	     return this.http
-               .post(this.colonistsUrl, body, { headers: headers })
-               .toPromise()
-               .then(response => {
-               		const colonist = response.json().colonist;
-               		this.saveColonistToStorage(colonist.id);
-               		return colonist;
-               	})
-               .catch(this.handleError);
+		return this.http
+		.post(this.colonistsUrl, body, { headers: headers })
+		.toPromise()
+		.then(response => {
+			const colonist = response.json().colonist;
+			this.saveColonistToStorage(colonist.id);
+			return colonist;
+		})
+		.catch(this.handleError);
 	} 
 	public getColonistId(): string{
 

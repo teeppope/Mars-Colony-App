@@ -11,9 +11,9 @@ export class OccupationService{
 	}
 	getOccupations(): Promise<IOccupation[]>{
 		return this.http.get(this.occupationsUrl)
-					.toPromise()
-					.then(response => response.json().jobs)
-					.catch(this.handleError);
+		.toPromise()
+		.then(response => response.json().jobs)
+		.catch(this.handleError);
 	}
 	private handleError(error: any): Promise<void>{
 		console.error('An error occurred', error);
