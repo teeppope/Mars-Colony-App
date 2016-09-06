@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class MarsblogService{
 	
-	marsblogUrl = 'http://fourth.acdemy.red/wp-json/wp/v2/posts';
+	marsblogUrl = 'http://fourth.academy.red/wp-json/wp/v2/posts';
 	
 	constructor(private http: Http){
 
