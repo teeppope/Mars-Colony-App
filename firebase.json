@@ -1,8 +1,9 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
-  "hosting": {
-    "public": "dist"
-  }
+	"firebase" : "mars-colony-app-a7b73",
+	"database": {
+		"rules": "database.rules.json"
+	},
+	"hosting": {
+		"public": "dist"
+	}
 }
