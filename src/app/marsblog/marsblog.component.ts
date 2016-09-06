@@ -21,7 +21,6 @@ export class MarsblogComponent {
 	) { 
 		marsblogService.getMarsblog().then(marsblogs => {
       this.marsblogs = marsblogs
-      console.log(marsblogs);
     });
   }
 }
