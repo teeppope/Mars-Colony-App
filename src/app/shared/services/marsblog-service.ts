@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class MarsblogService{
 	
-	marsblogUrl = 'http://fourth.academy.red/wp-json/wp/v2/posts';
+	marsblogUrl = 'http://fourth.acdemy.red/wp-json/wp/v2/posts';
 	
 	constructor(private http: Http){
 
@@ -21,7 +21,10 @@ export class MarsblogService{
 
 	private handleError(error: any): Promise<void>{
 		console.error('An error occurred', error);
-		return Promise.reject(error.message || error);
+
+		const message: string = 'Sorry the Blog is unavailable at this time. Please check back at a later time';
+
+		return Promise.reject(message);
 	}
 
 }

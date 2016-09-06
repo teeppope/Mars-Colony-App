@@ -1,7 +1,9 @@
 <main class="marsblog">
 	<section>
 		<h1>{{title}}</h1>
-		<div *ngIf="!marsblogs" class="loader"></div>
+		<div *ngIf="!marsblogs && !errorMessage" class="loader"></div>
+
+		<div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
 		
 		<ul class="marsblog-list" *ngIf="marsblogs">
 			<li *ngFor="let m of marsblogs">

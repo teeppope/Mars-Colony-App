@@ -14,6 +14,7 @@ export class MarsblogComponent {
 	title: string = 'The Mars Colony Blog';
 
 	public marsblogs: any[];
+  public errorMessage: string;
 
 	constructor(
 		private router: Router,
@@ -21,6 +22,8 @@ export class MarsblogComponent {
 	) { 
 		marsblogService.getMarsblog().then(marsblogs => {
       this.marsblogs = marsblogs
-    });
+    }).catch(
+      message => this.errorMessage = message
+    );
   }
 }
